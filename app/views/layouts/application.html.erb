@@ -2,13 +2,41 @@
 <html>
 <head>
   <title>RailsGroupTaskManager</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
+<nav class="navbar navbar-default navbar-static-top" style="background: #F1F1F1">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Menu
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li class="dropdown-header"><u>Lists</u></li>
+        <li><a href="#">Create List</a></li>
+        <li><a href="#">Edit Lists</a></li>
+        <li><a href="#">View Lists</a></li>
+      <li class="dropdown-header"><u>Tasks</u></li>
+        <li><a href="#">Create Task</a></li>
+        <li><a href="#">Edit Tasks</a></li>
+        <li><a href="#">View Tasks</a></li>
+        <li role="separator" class="divider"></li>
+      <li><a href="/users/login">Sign In</a></li>
+      <li><a href="/users/new">Sign Up</a></li>
+
+    </ul>
+  </div>
+  <h1 style="float: auto;">Group Task Manager</h1>
+</nav>
 
 <%= yield %>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  
 
 </body>
 </html>
