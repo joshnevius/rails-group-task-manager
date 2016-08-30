@@ -8,5 +8,10 @@ class TasksController < ApplicationController
       render "lists/show"
     end
   end
-
+  
+  private
+  
+  def item_params
+    params.require(:item).permit(:name, :status)
+  end
 end
