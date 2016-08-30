@@ -25,10 +25,9 @@
         <li><a href="#">Edit Tasks</a></li>
         <li><a href="">View Tasks</a></li>
         <li role="separator" class="divider"></li>
-      <li><a href="users/sign_in">Sign In</a></li>
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
-      <li><a href="users/sign_up">Create an Account</a></li>
-
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
     </ul>
   </div>
   <h1 style="float: auto;">Group Task Manager</h1>

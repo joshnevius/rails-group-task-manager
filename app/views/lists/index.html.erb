@@ -1,11 +1,11 @@
 <!-- when a user gets logged in or clicks to view lists, routes to 'list/index'
  -->
-<h1> Welcome Home! <%= current_user.email if !current_user.nil? %></h1>
-  <%= form_for(@list) do |f| %>
+<h3><ul> Welcome, <%= current_user.email if !current_user.nil? %></ul></h3>
+  <ul><%= form_for(@list) do |f| %>
     <%= f.text_field :name %>
     <%= f.submit %>
   <% end %>
-
+</ul>
 
  
 
