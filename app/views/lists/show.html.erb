@@ -1,2 +1,8 @@
-<!-- Once user clicks on a particular list, routes to '/lists/show'
+<!-- Once user clicks on a particular list or edits , routes to '/lists/show'
  -->
+<h3><%= @list.name %></h3>
+  <%= form_for([@list, @task]) do |f| %>
+  <form action="/lists" method="POST">
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
