@@ -17,7 +17,7 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
       <li class="dropdown-header"><u>Lists</u></li>
-        <li><a href="lists/new">Create List</a></li>
+        <li><a href="list/new">Create List</a></li>
         <li><a href="lists/edit">Edit Lists</a></li>
         <li><a href="lists/index">View Lists</a></li>
       <li class="dropdown-header"><u>Tasks</u></li>
@@ -25,12 +25,12 @@
         <li><a href="#">Edit Tasks</a></li>
         <li><a href="">View Tasks</a></li>
         <li role="separator" class="divider"></li>
-      <li><%= link_to "Sign Up", new_user_registration_path %></li>
       <li><%= link_to "Login", new_user_session_path %></li>
       <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
     </ul>
   </div>
-  <h1 style="float: auto;">Group Task Manager</h1>
+  <h1 style="float: auto; padding: -100px;">Group Task Manager</h1>
 </nav>
 
 <%= yield %>

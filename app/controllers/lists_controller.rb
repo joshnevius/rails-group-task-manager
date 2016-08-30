@@ -2,7 +2,6 @@ class ListsController < ApplicationController
   def index
     @list = List.new
     @lists = List.all
-    # render 'lists/index.html.erb'
   end
 
   def show
@@ -19,7 +18,7 @@ class ListsController < ApplicationController
   end
   private
 
-    def list_params # strong parameters
+    def list_params
       params.require(:list).permit(:name)
     end
 end
