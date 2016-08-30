@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160829180240) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "list_id"
-    t.integer  "user_id"
     t.string   "name"
     t.string   "status",     default: "Task not complete."
     t.datetime "created_at",                                null: false
