@@ -2,5 +2,12 @@
 
 <h2>Here are all tasks:</h3>
 <% @task.each do |task| %>
-  <h3><ul>  &#62; <%= task.name %> </ul></h3>
+  <h3>
+    <ul> 
+      > <%= task.name %> 
+      <ul><h5><%= button_to "Edit", edit_list_task_path(task.list, task), :method => "edit", :class => "edit" %><%= button_to "Delete", list_task_path(task.list, task), :method => "delete", :class => "destroy" %></h5>
+      </ul>
+    </ul>
+  </h3>
+  
   <% end %>

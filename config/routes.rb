@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'lists#index'
+  root 'sessions#new'
 
   resources :lists do
     resources :tasks
