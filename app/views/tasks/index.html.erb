@@ -1,0 +1,6 @@
+<!-- when a user clicks to view tasks, it links to 'tasks/index' to view all tasks with their associated lists -->
+
+<h2>Here are all tasks:</h3>
+<% @task.each do |task| %>
+  <h3><ul>  &#62; <%= task.name %> </ul></h3>
+  <% end %>
