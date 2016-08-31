@@ -1,19 +1,21 @@
 <!-- when a user gets logged in or clicks to view lists, routes to 'list/index'
  -->
 <h2><ul> Welcome, <%= current_user.email if !current_user.nil? %></ul></h2>
-  <% if @list.nil? %>
+  
   <ul><%= form_for(@list) do |f| %>
     <%= f.text_field :name, placeholder: 'i.e. Grocery' %>
     <%= f.submit %>
     <% end %>
   </ul>
-  <% else %>
-  <ul><h3>Here are your lists:</h3>
+  
+  <ul><h3>Here are all lists:</h3>
     <% @lists.each do |list| %>
-      <ul><h4><%= link_to list.name, list %></h4></ul>
+      <input class="toggle-all" type="checkbox">
+      <label for="toggle-all">Mark as complete:</label>
+      <ul><h4> &#62; <%= link_to list.name, list %></h4></ul>
     <% end %>
   </ul>
-<% end %>
+
 
  
 
