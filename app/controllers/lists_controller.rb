@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  #before_action :require_login
+
   def index
     @list = List.new
     @lists = List.all
@@ -23,5 +25,9 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id    
   end
 end

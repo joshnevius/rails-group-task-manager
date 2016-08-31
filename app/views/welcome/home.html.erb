@@ -1,0 +1,7 @@
+
+<% if user_signed_in? %>
+  <%= link_to "View Main Menu", lists_path %>
+<% else %>
+  <h2><ul> Welcome!</ul></h2>
+  <p>Click here to create an account</p>
+<% end %>
