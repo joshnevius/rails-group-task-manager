@@ -2,9 +2,9 @@
  -->
 <h3><%= @list.name %></h3>
   <%= form_for([@list, @task]) do |f| %>
-  <form action="/lists" method="POST">
+  <form action="/lists" method="PUT">
     <%= f.text_field :name %>
-    <%= f.submit %>
+    <a href="/lists/:list_id/tasks"><%= f.submit %></a>
   <% end %>
 
-  
+  <!-- :url => update_article_path(@article) -->
