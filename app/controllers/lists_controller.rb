@@ -5,20 +5,23 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.all
-    @task = @list.tasks.build
+    @list = List.find(params[:id])
+    @task = Task.new
   end
 
   def create
     @list = List.new(list_params)
-    @list.name = params[:list][:name]
-    @list.save
-
-    redirect_to list_url(@list)
+    if @list.save
+      redirect_to list_url(@list)
+    else
+      @lists = List.all
+      render :index
+    end
   end
+
   private
 
-    def list_params
-      params.require(:list).permit(:name)
-    end
+  def list_params
+    params.require(:list).permit(:name)
+  end
 end
