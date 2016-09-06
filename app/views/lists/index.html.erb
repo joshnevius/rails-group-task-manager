@@ -1,20 +1,28 @@
 <!-- when a user gets logged in or clicks to view lists, routes to 'list/index'
  -->
-<h2><ul> Welcome, <%= current_user.email if !current_user.nil? %></ul></h2>
-  
-  <ul><%= form_for(@list) do |f| %>
-    <%= f.text_field :name, placeholder: 'i.e. Grocery' %>
-    <%= f.submit %>
-    <% end %>
-  </ul>
-  
-  <ul><h3>Here are all lists:</h3>
-    <% @lists.each do |list| %>
-      <input class="toggle-all" type="checkbox">
-      <label for="toggle-all">Mark as complete:</label>
-      <ul><h4> &#62; <%= link_to list.name, list %></h4></ul>
-    <% end %>
-  </ul>
+
+<% if user_signed_in? %> 
+  <h2><ul> Welcome, <%= current_user.email if !current_user.nil? %></ul></h2>
+    
+    <ul><%= form_for(@list) do |f| %>
+      <%= f.text_field :name, placeholder: 'i.e. Grocery' %>
+      <%= f.submit %>
+      <% end %>
+    </ul>
+    
+    <ul><h3>Here are all lists:</h3>
+      <% @lists.each do |list| %>
+        <input class="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark as complete:</label>
+        <ul><h4> &#62; <%= link_to list.name, list %></h4></ul>
+      <% end %>
+    </ul>
+<% else %>
+  <h2><ul> Welcome!</ul></h2>
+  <ul><h3>This is a group task manager application for users to keep track of their daily functions.</h3></ul>
+  <ul><h3>To get started, click the menu icon and click "Sign Up" - or "Login" if you've already made an account.</h3></ul>
+  <ul><h4>(You may also be given the option to sign in with you Github info if you'd prefer.)</h4></ul>
+<% end %>
 
 
  
