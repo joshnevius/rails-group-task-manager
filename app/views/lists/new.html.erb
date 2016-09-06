@@ -1,15 +1,11 @@
 <ul><h2>Create A New List with a Task</h2>
-<%= form_for(@list) do |list_form| %>
- <ul> <h4>List Name: <%= list_form.text_field :name %></h4>
 
-  <h4>
-    <%= list_form.fields_for :tasks, @list.tasks do |task_field| %>
-      <h4>
-        Task Name: <%= task_field.text_field :name, placeholder: "Create A Task" %>
-         Status: <%= task_field.text_field :status %>
-      </h4>
+<%= form_for(@list) do |list_form| %>
+   <ul> <h4>List Name: <%= list_form.text_field :name, placeholder: "Create a List" %></h4>
+      <%= list_form.fields_for :tasks, @list.tasks do |task_field| %>
+        <h4>Task Name: <%= task_field.text_field :name, placeholder: "Create a Task" %></h4>
+      <% end %>
+      <h4><%= list_form.submit %></h4>
     <% end %>
-    <%= list_form.submit %>
-  <% end %>
-</ul>
+  </ul>
 </ul>
