@@ -1,10 +1,11 @@
 <!-- Once user clicks on a particular list or edits , routes to '/lists/show'
  -->
 <h3><%= @list.name %></h3>
-  <%= form_for([@list, @task]) do |f| %>
-  <form action="/lists" method="GET">
-    <%= f.text_field :name %>
-    <a href="/lists/:list_id/tasks"><%= f.submit %></a>
+  <%= form_for([@list, Task.new]) do |f| %>
+    <%= f.text_field :name, placeholder: "Create a task" %>
   <% end %>
+
+   <label for="toggle-all">Mark as complete:</label>
+   <%= render @list.tasks %>
 
   <!-- :url => update_article_path(@article) -->

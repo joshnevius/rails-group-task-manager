@@ -11,13 +11,17 @@ class ListsController < ApplicationController
     @task = Task.new
   end
 
+  def new 
+    @list = List.new
+    @list.tasks.build
+  end
+
   def create
     @list = List.new(list_params)
     if @list.save
-      redirect_to list_url(@list)
+      redirect_to @list
     else
-      @lists = List.all
-      render :index
+      render :new
     end
   end
 
