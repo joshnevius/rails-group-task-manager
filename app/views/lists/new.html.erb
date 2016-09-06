@@ -1,5 +1,6 @@
+<ul><h2>Create A New List with a Task</h2>
 <%= form_for(@list) do |list_form| %>
-  <h4>List Name: <%= list_form.text_field :name %></h4>
+ <ul> <h4>List Name: <%= list_form.text_field :name %></h4>
 
   <h4>
     <%= list_form.fields_for :tasks, @list.tasks do |task_field| %>
@@ -9,3 +10,5 @@
     <% end %>
     <%= list_form.submit %>
   <% end %>
+</ul>
+</ul>
