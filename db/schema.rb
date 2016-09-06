@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830180134) do
+ActiveRecord::Schema.define(version: 20160906151127) do
 
   create_table "lists", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,9 +22,16 @@ ActiveRecord::Schema.define(version: 20160830180134) do
   create_table "tasks", force: :cascade do |t|
     t.integer  "list_id"
     t.string   "name"
-    t.string   "status",     default: "Task not complete."
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.boolean  "status",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "user_lists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

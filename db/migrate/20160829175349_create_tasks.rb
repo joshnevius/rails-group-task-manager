@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.integer :list_id
       t.string :name
-      t.string :status, :default => "Task not complete."
+      t.boolean :status, :default => "Task not complete."
 
       t.timestamps null: false
     end
