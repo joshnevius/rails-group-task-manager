@@ -29,6 +29,12 @@
   <ul><ul><h1 style="float: auto; padding: -100px;">Group Task Manager</h1></ul></ul>
 </nav>
 
+<ul>
+  <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+  <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+  <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+</ul>
+
 <%= yield %>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

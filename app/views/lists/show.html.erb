@@ -1,12 +1,13 @@
-<!-- Once user clicks on a particular list or edits , routes to '/lists/show'
- -->
-<h3><%= @list.name %></h3>
-  <%= form_for([@list, Task.new]) do |f| %>
-    <%= f.text_field :name, placeholder: "Create a task" %>
-    <%= f. submit %>
-  <% end %>
+<ul>
+  <h3><%= @list.name %></h3>
+    <%= form_for([@list, Task.new]) do |f| %>
+      <%= f.text_field :name, placeholder: "Create a task" %>
+      <%= f. submit %>
+    <% end %>
 
-   <label for="toggle-all">Mark as complete:</label>
-   <%= render @list.tasks %>
-
-  <!-- :url => update_article_path(@article) -->
+  <input class="toggle-all" type="checkbox">
+  <label for="toggle-all">Mark as complete:</label>
+  <ol>
+    <li><%= render @list.tasks %></li>
+  </ol>
+</ul>
