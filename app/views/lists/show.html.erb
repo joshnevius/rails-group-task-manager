@@ -2,7 +2,7 @@
  -->
 <h3><%= @list.name %></h3>
   <%= form_for([@list, @task]) do |f| %>
-  <form action="/lists" method="PUT">
+  <form action="/lists" method="GET">
     <%= f.text_field :name %>
     <a href="/lists/:list_id/tasks"><%= f.submit %></a>
   <% end %>
