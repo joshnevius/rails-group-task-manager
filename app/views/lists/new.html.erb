@@ -6,6 +6,7 @@
     <%= list_form.fields_for :tasks, @list.tasks do |task_field| %>
       <h4>
         Task Name: <%= task_field.text_field :name, placeholder: "Create A Task" %>
+         Status: <%= task_field.text_field :status %>
       </h4>
     <% end %>
     <%= list_form.submit %>

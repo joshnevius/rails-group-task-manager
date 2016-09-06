@@ -3,6 +3,7 @@
 <h3><%= @list.name %></h3>
   <%= form_for([@list, Task.new]) do |f| %>
     <%= f.text_field :name, placeholder: "Create a task" %>
+    <%= f. submit %>
   <% end %>
 
    <label for="toggle-all">Mark as complete:</label>
