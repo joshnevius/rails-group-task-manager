@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
      
 
-  has_many :lists
-  has_many :tasks, through: :lists
+  has_many :user_lists
+  has_many :lists, through: :user_lists
 
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
