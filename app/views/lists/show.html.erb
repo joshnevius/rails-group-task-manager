@@ -7,7 +7,8 @@
 
   <input class="toggle-all" type="checkbox">
   <label for="toggle-all">Mark as complete:</label>
-  <ol>
+  <ul>
     <li><%= render @list.tasks %></li>
-  </ol>
+    <%= button_to "Task Complete?", list_tasks_path, :method => "delete", :class => "destroy" %>
+  </ul>
 </ul>

@@ -7,7 +7,7 @@
       > <%= task.name %> 
       <ul>
         <h5>
-          <%= button_to "Delete", list_task_path(task.list, task), :method => "delete", :class => "destroy" %><%= button_to "Edit", edit_list_task_path(task.list, task), :method => "edit", :class => "edit" %>
+          <%= button_to "Task Complete?", list_task_path(task.list, task), :method => "delete", :class => "destroy" %>
         </h5>
       </ul> 
     </ul>
