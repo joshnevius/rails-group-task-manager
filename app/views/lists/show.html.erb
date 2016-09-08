@@ -5,10 +5,13 @@
       <%= f. submit %>
     <% end %>
 
-  <input class="toggle-all" type="checkbox">
-  <label for="toggle-all">Mark as complete:</label>
+
   <ul>
-    <li><%= render @list.tasks %></li>
-    <%= button_to "Task Complete?", list_tasks_path, :method => "delete", :class => "destroy" %>
+    <%= render @list.tasks %>
+    <% if !@list.tasks.nil? %>
+    <%= button_to "Task Complete", lists_path, :method => "destroy", :class => "destroy" %>
+    <% else %>
+    <h4>There are currently no tasks associated to this list!</h4>
+    <% end %>
   </ul>
 </ul>

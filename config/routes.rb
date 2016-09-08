@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'lists#index'
 
   resources :lists do
-    resources :tasks, only: [:create]
+    resources :tasks
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
